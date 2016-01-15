@@ -1,0 +1,26 @@
+﻿@using PrimerosPasos.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listado de Productos</h2>
+
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+    </tr>
+    @foreach(Producto p in (IEnumerable<Producto>)ViewData["productos"])
+    {
+        <tr>
+            <td>@p.Nombre</td>
+            <td>@p.Descripcion</td>
+            <td>@p.Precio</td>
+        </tr>
+    }
+</table>
+<br />
+@Html.ActionLink("Crear un nuevo producto","Crear")
+
